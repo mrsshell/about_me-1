@@ -4,12 +4,11 @@ var userName = prompt('Greetings! Please enter your name.');
 console.log('Greetings! Please enter your name.');
 console.log('A: ' + userName);
 
-//change .toLowerCase() to be included within the if statements
 var pButter = prompt('Do I like peanut butter?').toLowerCase();
 console.log('Q: Do I like peanut butter?');
 console.log('A: ' + pButter);
 if (pButter === 'y' || pButter === 'yes') {
-  alert('Nice! That\'s my favorite food.');
+  alert('Yes! That\'s my favorite food.');
 } else {
   alert('You\'re wrong.');
 }
@@ -54,14 +53,40 @@ var correctNum = 17;
 var numGuess = 0;
 
 while (numGuess < 4) {
-  var userNum = parseInt(prompt('Guess a number between 1 and 100.'));
-  console.log('Guess a number between 1 and 100.');
+  var userNum = parseInt(prompt('Guess a number between 1 and 100. You have 4 attempts.'));
+  console.log('Guess a number between 1 and 100. You have 4 attempts.');
   console.log('A: ' + userNum);
   if (userNum === correctNum) {
     alert('Nice! You got it right!');
     break;
   } else {
-    alert('Incorrect. Guess again.');
+    alert('Incorrect.');
     numGuess++;
   }
 }
+
+var countries = ['ireland', 'germany', 'iraq', 'afghanistan', 'kuwait', 'jordan', 'united arab emirates', 'turkey'];
+var totalGuesses = 0;
+
+while (totalGuesses < 6) {
+  var countryGuess = prompt('Can you guess a country outside of the U.S. I\'ve visited? You have 6 tries.').toLowerCase();
+  console.log('Can you guess a country outside of the U.S. I\'ve visited? You have 6 tries.');
+  console.log('A: ' + userNum);
+  if (countryGuess.includes(countries)) {
+    alert('Your guess of' + countryGuess + ' is correct!');
+    break;
+  } else {
+    alert('Nope. Try again.');
+    totalGuesses++;
+  }
+}
+
+var countryList = '';
+for (var i = 0; i < countries.length; i++) {
+  if (i != countries.length - 1) {
+    countryList = countryList + countries[i] + ', ';
+  } else {
+    countryList = countryList + countries[i];
+  }
+}
+alert('The possible answers were ' + countryList + '.');
