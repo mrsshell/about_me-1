@@ -43,75 +43,89 @@ function question3 () {
     alert('I listen to them all of the time.');
   }
 }
-question3();  
+question3();
 
-var hike = prompt('Is hiking one of my hobbies?').toLowerCase();
-console.log('Q: Is hiking one of my hobbies?');
-console.log('A: ' + hike);
-if (hike === 'y' || hike === 'yes') {
-  alert('Correct. We should get outside when we\'re not coding.');
-  tally++;
-} else {
-  alert('Oops. You\'re wrong.');
+function question4 () {
+  var hike = prompt('Is hiking one of my hobbies?').toLowerCase();
+  console.log('Q: Is hiking one of my hobbies?');
+  console.log('A: ' + hike);
+  if (hike === 'y' || hike === 'yes') {
+    alert('Correct. We should get outside when we\'re not coding.');
+    tally++;
+  } else {
+    alert('Oops. You\'re wrong.');
+  }
 }
+question4();
 
-var learnCode = prompt('Am I trying to learn to code?').toLowerCase();
-console.log('Q: Am I trying to learn to code?');
-console.log('A: ' + hike);
-if (learnCode === 'y' || learnCode === 'yes') {
-  alert('You\'re right, I am!');
-  tally++;
-} else {
-  alert('Wrong.');
+function question5 () {
+  var learnCode = prompt('Am I trying to learn to code?').toLowerCase();
+  console.log('Q: Am I trying to learn to code?');
+  console.log('A: ' + learnCode);
+  if (learnCode === 'y' || learnCode === 'yes') {
+    alert('You\'re right, I am!');
+    tally++;
+  } else {
+    alert('Wrong.');
+  }
 }
+question5();
 
 var correctNum = 17;
 var numGuess = 0;
-
-while (numGuess < 4) {
-  var userNum = prompt('Guess a number between 1 and 100. You have 4 attempts.');
-  console.log('Guess a number between 1 and 100. You have 4 attempts.');
-  console.log('A: ' + userNum);
-  if (userNum === correctNum) {
-    alert('Nice! You got it right!');
-    tally++;
-    break;
-  } else if (userNum < 17 && parseInt(userNum) > 0) {
-    alert('Incorrect. The number is larger than that.');
-  } else if (userNum > 17 && parseInt(userNum) < 100) {
-    alert('Incorrect. The number is smaller than that.');
-  } else {
-    alert('Follow the instructions. Only numbers between 1 and 100.');
+function question6 () {
+  while (numGuess < 4) {
+    var userNum = prompt('Guess a number between 1 and 100. You have 4 attempts.');
+    console.log('Guess a number between 1 and 100. You have 4 attempts.');
+    console.log('A: ' + userNum);
+    if (userNum === correctNum) {
+      alert('Nice! You got it right!');
+      tally++;
+      break;
+    } else if (userNum < 17 && parseInt(userNum) > 0) {
+      alert('Incorrect. The number is larger than that.');
+    } else if (userNum > 17 && parseInt(userNum) < 100) {
+      alert('Incorrect. The number is smaller than that.');
+    } else {
+      alert('Follow the instructions. Only numbers between 1 and 100.');
+    }
+    numGuess++;
   }
-  numGuess++;
 }
+question6();
 
 var countries = ['ireland', 'germany', 'iraq', 'afghanistan', 'kuwait', 'jordan', 'united arab emirates', 'turkey', 'south korea'];
-var totalGuesses = 0;
+function question7 () {
+  var totalGuesses = 0;
 
-while (totalGuesses < 6) {
-  var countryGuess = prompt('Can you guess a country outside of the U.S. I\'ve visited? You have 6 tries.').toLowerCase();
-  console.log('Can you guess a country outside of the U.S. I\'ve visited? You have 6 tries.');
-  console.log('A: ' + countryGuess);
-  if (countries.includes(countryGuess)) {
-    alert('Your guess of ' + countryGuess + ' is correct!');
-    tally++;
-    break;
-  } else {
-    alert('Nope. Try again.');
-    totalGuesses++;
+  while (totalGuesses < 6) {
+    var countryGuess = prompt('Can you guess a country outside of the U.S. I\'ve visited? You have 6 tries.').toLowerCase();
+    console.log('Can you guess a country outside of the U.S. I\'ve visited? You have 6 tries.');
+    console.log('A: ' + countryGuess);
+    if (countries.includes(countryGuess)) {
+      alert('Your guess of ' + countryGuess + ' is correct!');
+      tally++;
+      break;
+    } else {
+      alert('Nope. Try again.');
+      totalGuesses++;
+    }
   }
 }
+question7();
 
-var countryList = '';
-for (var i = 0; i < countries.length; i++) {
-  if (i != countries.length - 1) {
-    countryList = countryList + countries[i] + ', ';
-  } else {
-    countryList = countryList + countries[i];
+function buildList () {
+  var countryList = '';
+  for (var i = 0; i < countries.length; i++) {
+    if (i != countries.length - 1) {
+      countryList = countryList + countries[i] + ', ';
+    } else {
+      countryList = countryList + countries[i];
+    }
   }
+  alert('The possible answers were ' + countryList + '.');
 }
-alert('The possible answers were ' + countryList + '.');
+buildList();
 
 alert(userName + ', You got ' + tally + ' of 7 questions right!');
 console.log(tally);
