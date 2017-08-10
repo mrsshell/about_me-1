@@ -1,47 +1,108 @@
 'use strict';
 
-//change .toLowerCase() to be included within the if statements
-var pButter = prompt('Do you like peanut butter?').toLowerCase();
-console.log('Q: Do you like peanut butter?');
+var userName = prompt('Greetings! Please enter your name.');
+console.log('Greetings! Please enter your name.');
+console.log('A: ' + userName);
+
+var tally = 0;
+
+var pButter = prompt('Do I like peanut butter?').toLowerCase();
+console.log('Q: Do I like peanut butter?');
 console.log('A: ' + pButter);
 if (pButter === 'y' || pButter === 'yes') {
-  alert('Nice! That\'s my favorite food.');
+  alert('Yes! That\'s my favorite food.');
+  tally++;
 } else {
-  alert('You\'re missing out.');
+  alert('You\'re wrong.');
 }
 
-var city = prompt('Have you ever been to Chicago?').toLowerCase();
-console.log('Q : Have you ever been to Chicago?');
+var city = prompt('Have I ever been to Chicago?').toLowerCase();
+console.log('Q : Have I ever been to Chicago?');
 console.log('A: ' + city);
 if (city === 'y' || city === 'yes') {
-  alert('Cool! That\'s where I\'m from.');
+  alert('Yep! That\'s where I\'m from.');
+  tally++;
 } else {
-  alert('You should visit.');
+  alert('Nope. I was born there.');
 }
 
-var podCast = prompt('Do you listen to podcasts?').toLowerCase();
-console.log('Q: Do you listen to podcasts?');
+var podCast = prompt('Do I listen to podcasts?').toLowerCase();
+console.log('Q: Do I listen to podcasts?');
 console.log('A: ' + podCast);
 if (podCast === 'y' || podCast === 'yes') {
-  alert('Awesome! There are so many great ones to listen to.');
+  alert('Correct! There are so many great ones to listen to.');
+  tally++;
 } else {
-  alert('Give them a try. I\'m sure there are some out there that you\'ll enjoy.');
+  alert('I listen to them all of the time.');
 }
 
-var hike = prompt('Is hiking one of your hobbies?').toLowerCase();
-console.log('Q: Is hiking one of your hobbies?');
+var hike = prompt('Is hiking one of my hobbies?').toLowerCase();
+console.log('Q: Is hiking one of my hobbies?');
 console.log('A: ' + hike);
 if (hike === 'y' || hike === 'yes') {
-  alert('Neat. We should get outside when we\'re not coding.');
+  alert('Correct. We should get outside when we\'re not coding.');
+  tally++;
 } else {
-  alert('It\'s not for everyone.');
+  alert('Oops. You\'re wrong.');
 }
 
-var learnCode = prompt('Are you trying to learn to code?').toLowerCase();
-console.log('Q: Are you trying to learn to code?');
+var learnCode = prompt('Am I trying to learn to code?').toLowerCase();
+console.log('Q: Am I trying to learn to code?');
 console.log('A: ' + hike);
 if (learnCode === 'y' || learnCode === 'yes') {
-  alert('So am I!');
+  alert('You\'re right, I am!');
+  tally++;
 } else {
-  alert('I bet you have lots of free time.');
+  alert('Wrong.');
 }
+
+var correctNum = 17;
+var numGuess = 0;
+
+while (numGuess < 4) {
+  var userNum = prompt('Guess a number between 1 and 100. You have 4 attempts.');
+  console.log('Guess a number between 1 and 100. You have 4 attempts.');
+  console.log('A: ' + userNum);
+  if (userNum === correctNum) {
+    alert('Nice! You got it right!');
+    tally++;
+    break;
+  } else if (userNum < 17 && parseInt(userNum) > 0) {
+    alert('Incorrect. The number is larger than that.');
+  } else if (userNum > 17 && parseInt(userNum) < 100) {
+    alert('Incorrect. The number is smaller than that.');
+  } else {
+    alert('Follow the instructions. Only numbers between 1 and 100.');
+  }
+  numGuess++;
+}
+
+var countries = ['ireland', 'germany', 'iraq', 'afghanistan', 'kuwait', 'jordan', 'united arab emirates', 'turkey', 'south korea'];
+var totalGuesses = 0;
+
+while (totalGuesses < 6) {
+  var countryGuess = prompt('Can you guess a country outside of the U.S. I\'ve visited? You have 6 tries.').toLowerCase();
+  console.log('Can you guess a country outside of the U.S. I\'ve visited? You have 6 tries.');
+  console.log('A: ' + countryGuess);
+  if (countries.includes(countryGuess)) {
+    alert('Your guess of ' + countryGuess + ' is correct!');
+    tally++;
+    break;
+  } else {
+    alert('Nope. Try again.');
+    totalGuesses++;
+  }
+}
+
+var countryList = '';
+for (var i = 0; i < countries.length; i++) {
+  if (i != countries.length - 1) {
+    countryList = countryList + countries[i] + ', ';
+  } else {
+    countryList = countryList + countries[i];
+  }
+}
+alert('The possible answers were ' + countryList + '.');
+
+alert(userName + ', You got ' + tally + ' of 7 questions right!');
+console.log(tally);
