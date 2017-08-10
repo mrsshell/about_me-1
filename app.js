@@ -4,11 +4,14 @@ var userName = prompt('Greetings! Please enter your name.');
 console.log('Greetings! Please enter your name.');
 console.log('A: ' + userName);
 
+var tally = 0;
+
 var pButter = prompt('Do I like peanut butter?').toLowerCase();
 console.log('Q: Do I like peanut butter?');
 console.log('A: ' + pButter);
 if (pButter === 'y' || pButter === 'yes') {
   alert('Yes! That\'s my favorite food.');
+  tally++;
 } else {
   alert('You\'re wrong.');
 }
@@ -18,6 +21,7 @@ console.log('Q : Have I ever been to Chicago?');
 console.log('A: ' + city);
 if (city === 'y' || city === 'yes') {
   alert('Yep! That\'s where I\'m from.');
+  tally++;
 } else {
   alert('Nope. I was born there.');
 }
@@ -27,6 +31,7 @@ console.log('Q: Do I listen to podcasts?');
 console.log('A: ' + podCast);
 if (podCast === 'y' || podCast === 'yes') {
   alert('Correct! There are so many great ones to listen to.');
+  tally++;
 } else {
   alert('I listen to them all of the time.');
 }
@@ -36,6 +41,7 @@ console.log('Q: Is hiking one of my hobbies?');
 console.log('A: ' + hike);
 if (hike === 'y' || hike === 'yes') {
   alert('Correct. We should get outside when we\'re not coding.');
+  tally++;
 } else {
   alert('Oops. You\'re wrong.');
 }
@@ -45,6 +51,7 @@ console.log('Q: Am I trying to learn to code?');
 console.log('A: ' + hike);
 if (learnCode === 'y' || learnCode === 'yes') {
   alert('You\'re right, I am!');
+  tally++;
 } else {
   alert('Wrong.');
 }
@@ -58,11 +65,16 @@ while (numGuess < 4) {
   console.log('A: ' + userNum);
   if (userNum === correctNum) {
     alert('Nice! You got it right!');
+    tally++;
     break;
+  } else if (userNum < 17 && userNum > 0) {
+    alert('Incorrect. The number is larger than that.');
+  } else if (userNum > 17 && userNum < 100) {
+    alert('Incorrect. The number is smaller than that.');
   } else {
-    alert('Incorrect.');
-    numGuess++;
+    alert('Follow the instructions. Only numbers between 1 and 100.');
   }
+  numGuess++;
 }
 
 var countries = ['ireland', 'germany', 'iraq', 'afghanistan', 'kuwait', 'jordan', 'united arab emirates', 'turkey', 'south korea'];
@@ -74,6 +86,7 @@ while (totalGuesses < 6) {
   console.log('A: ' + countryGuess);
   if (countries.includes(countryGuess)) {
     alert('Your guess of ' + countryGuess + ' is correct!');
+    tally++;
     break;
   } else {
     alert('Nope. Try again.');
@@ -90,3 +103,6 @@ for (var i = 0; i < countries.length; i++) {
   }
 }
 alert('The possible answers were ' + countryList + '.');
+
+alert(userName + ', You got ' + tally + ' of 7 questions right!');
+console.log(tally);
