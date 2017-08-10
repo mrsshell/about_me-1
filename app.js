@@ -65,15 +65,15 @@ while (numGuess < 4) {
   }
 }
 
-var countries = ['ireland', 'germany', 'iraq', 'afghanistan', 'kuwait', 'jordan', 'united arab emirates', 'turkey'];
+var countries = ['ireland', 'germany', 'iraq', 'afghanistan', 'kuwait', 'jordan', 'united arab emirates', 'turkey', 'south korea'];
 var totalGuesses = 0;
 
 while (totalGuesses < 6) {
   var countryGuess = prompt('Can you guess a country outside of the U.S. I\'ve visited? You have 6 tries.').toLowerCase();
   console.log('Can you guess a country outside of the U.S. I\'ve visited? You have 6 tries.');
-  console.log('A: ' + userNum);
-  if (countryGuess.includes(countries)) {
-    alert('Your guess of' + countryGuess + ' is correct!');
+  console.log('A: ' + countryGuess);
+  if (countries.includes(countryGuess)) {
+    alert('Your guess of ' + countryGuess + ' is correct!');
     break;
   } else {
     alert('Nope. Try again.');
