@@ -6,35 +6,44 @@ console.log('A: ' + userName);
 
 var tally = 0;
 
-var pButter = prompt('Do I like peanut butter?').toLowerCase();
-console.log('Q: Do I like peanut butter?');
-console.log('A: ' + pButter);
-if (pButter === 'y' || pButter === 'yes') {
-  alert('Yes! That\'s my favorite food.');
-  tally++;
-} else {
-  alert('You\'re wrong.');
+function question1 () {
+  var pButter = prompt('Do I like peanut butter?').toLowerCase();
+  console.log('Q: Do I like peanut butter?');
+  console.log('A: ' + pButter);
+  if (pButter === 'y' || pButter === 'yes') {
+    alert('Yes! That\'s my favorite food.');
+    tally++;
+  } else {
+    alert('You\'re wrong.');
+  }
 }
+question1();
 
-var city = prompt('Have I ever been to Chicago?').toLowerCase();
-console.log('Q : Have I ever been to Chicago?');
-console.log('A: ' + city);
-if (city === 'y' || city === 'yes') {
-  alert('Yep! That\'s where I\'m from.');
-  tally++;
-} else {
-  alert('Nope. I was born there.');
+function question2 () {
+  var city = prompt('Have I ever been to Chicago?').toLowerCase();
+  console.log('Q : Have I ever been to Chicago?');
+  console.log('A: ' + city);
+  if (city === 'y' || city === 'yes') {
+    alert('Yep! That\'s where I\'m from.');
+    tally++;
+  } else {
+    alert('Nope. I was born there.');
+  }
 }
+question2();
 
-var podCast = prompt('Do I listen to podcasts?').toLowerCase();
-console.log('Q: Do I listen to podcasts?');
-console.log('A: ' + podCast);
-if (podCast === 'y' || podCast === 'yes') {
-  alert('Correct! There are so many great ones to listen to.');
-  tally++;
-} else {
-  alert('I listen to them all of the time.');
+function question3 () {
+  var podCast = prompt('Do I listen to podcasts?').toLowerCase();
+  console.log('Q: Do I listen to podcasts?');
+  console.log('A: ' + podCast);
+  if (podCast === 'y' || podCast === 'yes') {
+    alert('Correct! There are so many great ones to listen to.');
+    tally++;
+  } else {
+    alert('I listen to them all of the time.');
+  }
 }
+question3();  
 
 var hike = prompt('Is hiking one of my hobbies?').toLowerCase();
 console.log('Q: Is hiking one of my hobbies?');
