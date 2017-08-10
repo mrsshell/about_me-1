@@ -60,16 +60,16 @@ var correctNum = 17;
 var numGuess = 0;
 
 while (numGuess < 4) {
-  var userNum = parseInt(prompt('Guess a number between 1 and 100. You have 4 attempts.'));
+  var userNum = prompt('Guess a number between 1 and 100. You have 4 attempts.');
   console.log('Guess a number between 1 and 100. You have 4 attempts.');
   console.log('A: ' + userNum);
   if (userNum === correctNum) {
     alert('Nice! You got it right!');
     tally++;
     break;
-  } else if (userNum < 17 && userNum > 0) {
+  } else if (userNum < 17 && parseInt(userNum) > 0) {
     alert('Incorrect. The number is larger than that.');
-  } else if (userNum > 17 && userNum < 100) {
+  } else if (userNum > 17 && parseInt(userNum) < 100) {
     alert('Incorrect. The number is smaller than that.');
   } else {
     alert('Follow the instructions. Only numbers between 1 and 100.');
